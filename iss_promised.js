@@ -16,7 +16,7 @@ const fetchISSFlyOverTimes = (coords) => {
 };
 
 const nextISSTimeForMyLocation = () => {
-  return fetchMyIP() //returning chained promises
+  return fetchMyIP() //start of returning "chained" promises (only one final promise being returned)
     .then(fetchCoordsByIP)  // don't neeed the () because the function itself is a call back function ///=>  (data) => {function stuff}; so techincally we could remove the name and just throw the function body in side .then()
     .then(fetchISSFlyOverTimes)
     .then((flyOverTimes) => {
